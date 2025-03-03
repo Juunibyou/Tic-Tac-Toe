@@ -4,38 +4,68 @@ import java.util.Scanner;
 public class App {
   public static void main(String[] args) {
 
-  char[][] board = {
-    {' ',' ',' '},
-    {' ',' ',' '}, 
-    {' ',' ',' '}
-  };
+    boolean playagain = true;
+    Scanner scanner = new Scanner(System.in);
 
-  Board gameboard = new Board();
-  Space space = new Space();
-  Turn turn = new Turn();
-  Gameover gameover = new Gameover();
-  Scanner scanner = new Scanner(System.in);
 
-  char currentplayer = 'X';
-  boolean finished = false;
-  
-    while(!finished){
+    while(playagain){
+      System.out.println("\nWelcome to Tic-Tac-Toe Game!\n");
+
+      char[][] board = {
+        {'1','2','3'},
+        {'4','5','6'}, 
+        {'7','8','9'}
+      };
+
+      Board gameboard = new Board();
+      Space space = new Space();
+      Turn turn = new Turn();
+      Gameover gameover = new Gameover();
+
+      char currentplayer = 'X';
+      boolean finished = false;
+      
+        while(!finished){
+        gameboard.printBoard(board);
+        boolean valid = false;
+
+          while(!valid){
+            valid = turn.PlayerTurn(board, currentplayer, scanner, space);
+          }
+
+        finished = gameover.isGameFinished(board, currentplayer);
+
+        //switch between player
+          if (!finished){
+            currentplayer = (currentplayer == 'X') ? 'O' : 'X';
+          }
+        }
+
     gameboard.printBoard(board);
-    boolean valid = false;
+    System.out.println("\nWould you like to play again? (Y/N)");
 
-      while(!valid){
-        valid = turn.PlayerTurn(board, currentplayer, scanner, space);
-      }
+    String again = scanner.nextLine().trim();;
 
-      finished = gameover.isGameFinished(board, currentplayer);
-
-      //switch between player
-      if (!finished){
-        currentplayer = (currentplayer == 'X') ? 'O' : 'X';
+    boolean valid_input = false;
+      while(!valid_input){
+        if(again.equals("y") || again.equals("Y")){
+          playagain = true; 
+          valid_input = true;
+        }
+        else if(again.equals("n") || again.equals("N")){
+          playagain = false;
+          valid_input = true;
+          System.out.println("\nGoodbye!...");
+        }
+        else{
+          System.out.println("\nPlease enter a valid input...");
+          System.out.println("Would you like to play again? (Y/N)");
+          valid_input = false; 
+          again = scanner.nextLine().trim();
+        }
       }
     }
-
-    gameboard.printBoard(board);
   }
 }
+
 

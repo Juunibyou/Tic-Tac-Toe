@@ -9,9 +9,10 @@ public class Turn {
         System.out.println("\nPlayer: " + player + "'s Turn. Select a position (1-9)");
         System.out.println("Position: ");
         String input = scanner.nextLine();
+        System.out.println("\n");
 
         if(!space.isAvailable(board, input)){
-            System.out.println("\nPosition have already been taken! Please select another...");
+            System.out.println("Position have already been taken! Please select another...");
             return false;
         }
 
