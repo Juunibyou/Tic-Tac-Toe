@@ -9,7 +9,7 @@ public class App {
 
 
     while(playagain){
-      System.out.println("\nWelcome to Tic-Tac-Toe Game!\n");
+      System.out.println("\n|_____Welcome to Tic-Tac-Toe Game!_____|\n");
 
       char[][] board = {
         {'1','2','3'},

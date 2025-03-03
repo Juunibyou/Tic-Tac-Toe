@@ -21,7 +21,7 @@ public class Gameover {
 //Tie conditions
     for(int i = 0; i < board.length; i++){
         for(int j = 0; j <board[i].length; j++){
-            if(board[i][j] != 'X' || board[i][j] != 'O'){
+            if(board[i][j] != 'X' && board[i][j] != 'O'){
                 return false;
             }
         }
