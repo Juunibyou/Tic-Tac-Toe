@@ -13,7 +13,7 @@ public class Gamelog {
     public void updateLog(char winner){
         if (winner == 'X'){Xwin++;}
         else if (winner == 'O'){Owin++;}
-        else{ties++;}
+        else if (winner == 'T'){ties++;}
     }
 
     public void printWin() {

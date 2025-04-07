@@ -29,9 +29,9 @@ public class App {
         gameboard.printBoard(board);
         boolean valid = false;
 
-          while(!valid){
-            valid = turn.PlayerTurn(board, currentplayer, scanner, space);
-          }
+        while(!valid){
+          valid = turn.PlayerTurn(board, currentplayer, scanner, space);
+        }
 
         finished = gameover.isGameFinished(board, currentplayer);
 
@@ -42,7 +42,10 @@ public class App {
         }
 
     gameboard.printBoard(board);
-    gamelog.updateLog(currentplayer);
+
+    char winner = currentplayer;
+
+    gamelog.updateLog(winner);
     gamelog.printWin();
     System.out.println("\nWould you like to play again? (Y/N)");
 
@@ -57,7 +60,7 @@ public class App {
         else if(again.equals("n") || again.equals("N")){
           playagain = false;
           valid_input = true;
-          System.out.println("Saving Game data...\n");
+          System.out.println("\nSaving game data...");
           gamelog.printWin();
           gamelog.saveLog();
           System.out.println("\nGoodbye!...");
