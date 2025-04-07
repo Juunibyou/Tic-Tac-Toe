@@ -1,2 +1,2 @@
 
-<<<Game Statistics>>>Player 'X' wins: 1Player 'O' wins: 0Ties: 0
+<<<Game Statistics>>>Player 'X' wins: 1Player 'O' wins: 3Ties: 0
