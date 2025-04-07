@@ -6,7 +6,7 @@ public class App {
 
     boolean playagain = true;
     Scanner scanner = new Scanner(System.in);
-
+    Gamelog gamelog = new Gamelog();
 
     while(playagain){
       System.out.println("\n|_____Welcome to Tic-Tac-Toe Game!_____|\n");
@@ -25,7 +25,7 @@ public class App {
       char currentplayer = 'X';
       boolean finished = false;
       
-        while(!finished){
+      while(!finished){
         gameboard.printBoard(board);
         boolean valid = false;
 
@@ -42,6 +42,8 @@ public class App {
         }
 
     gameboard.printBoard(board);
+    gamelog.updateLog(currentplayer);
+    gamelog.printWin();
     System.out.println("\nWould you like to play again? (Y/N)");
 
     String again = scanner.nextLine().trim();;
@@ -55,6 +57,9 @@ public class App {
         else if(again.equals("n") || again.equals("N")){
           playagain = false;
           valid_input = true;
+          System.out.println("Saving Game data...\n");
+          gamelog.printWin();
+          gamelog.saveLog();
           System.out.println("\nGoodbye!...");
         }
         else{

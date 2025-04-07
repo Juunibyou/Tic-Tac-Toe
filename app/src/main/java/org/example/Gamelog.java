@@ -17,17 +17,17 @@ public class Gamelog {
     }
 
     public void printWin() {
-        System.out.println("\n<<<Game Statistics>>>\n");
-        System.out.println("Player 'X' wins: " + Xwin + "\n");
-        System.out.println("Player 'O' wins: " + Owin + "\n");
+        System.out.println("\n<<<Game Statistics>>>");
+        System.out.println("Player 'X' wins: " + Xwin);
+        System.out.println("Player 'O' wins: " + Owin);
         System.out.println("Ties: " + ties + "\n");
     }
 
     public void saveLog() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("gamelog.txt"))) {
-            writer.write("\n<<<Game Statistics>>>\n");
-            writer.write("Player 'X' wins: " + Xwin + "\n");
-            writer.write("Player 'O' wins: " + Owin + "\n");
+            writer.write("\n<<<Game Statistics>>>");
+            writer.write("Player 'X' wins: " + Xwin);
+            writer.write("Player 'O' wins: " + Owin);
             writer.write("Ties: " + ties + "\n");
         } 
         catch (IOException error) {
