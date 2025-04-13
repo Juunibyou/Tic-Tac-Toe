@@ -13,7 +13,7 @@ public class Gamelog {
     public void updateLog(char winner){
         if (winner == 'X'){Xwin++;}
         else if (winner == 'O'){Owin++;}
-        else if (winner == 'T'){ties++;}
+        else{ties++;}
     }
 
     public void printWin() {
@@ -27,8 +27,8 @@ public class Gamelog {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("gamelog.txt"))) {
             writer.write("\n<<<Game Statistics>>>");
             writer.write("Player 'X' wins: " + Xwin);
-            writer.write("Player 'O' wins: " + Owin);
-            writer.write("Ties: " + ties + "\n");
+            writer.write("\nPlayer 'O' wins: " + Owin);
+            writer.write("\nTies: " + ties + "\n");
         } 
         catch (IOException error) {
             System.out.println("Error has occurred while saving log...\n");
