@@ -31,7 +31,7 @@ boolean tie = true;
 
     if(tie){
     System.out.println("\nThe game has ended in a tie!");
-    return false;
+    return true;
     }
 
     return false;
