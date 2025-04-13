@@ -26,7 +26,7 @@ public class Gamelog {
     public void saveLog() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("gamelog.txt"))) {
             writer.write("\n<<<Game Statistics>>>");
-            writer.write("Player 'X' wins: " + Xwin);
+            writer.write("\nPlayer 'X' wins: " + Xwin);
             writer.write("\nPlayer 'O' wins: " + Owin);
             writer.write("\nTies: " + ties + "\n");
         } 

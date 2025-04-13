@@ -48,8 +48,12 @@ public class App {
 
     char winner = currentplayer;
     char loser = (currentplayer == 'X') ? 'O' : 'X';
-    char result = (gameover.isGameFinished(board, currentplayer)) ? winner : 'T';
 
+    char result;
+    if (gameover.CheckWinner(board, currentplayer)){
+      result = currentplayer;
+    }
+    else{result = 'T';}
     gamelog.updateLog(result);
 
     lastWinner = winner;
@@ -68,7 +72,7 @@ public class App {
         else if(again.equals("n") || again.equals("N")){
           playagain = false;
           valid_input = true;
-          System.out.println("\nSaving game data...");
+          System.out.println("\nSaving game data... Check 'gamelog.txt' to see scores!");
           gamelog.printWin();
           gamelog.saveLog();
           System.out.println("\nGoodbye!...");

@@ -12,7 +12,7 @@ public class Turn {
         System.out.println("\n");
 
         if(!space.isAvailable(board, input)){
-            System.out.println("Position have already been taken! Please select another...");
+            System.out.println("Position is not valid! Please select another...");
             return false;
         }
 
