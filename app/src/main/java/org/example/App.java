@@ -8,6 +8,32 @@ public class App {
     Scanner scanner = new Scanner(System.in);
     Gamelog gamelog = new Gamelog();
 
+    System.out.println("Select game mode:");
+    System.out.println("1. Human vs Human");
+    System.out.println("2. Human vs Computer");
+    System.out.println("3. Computer vs Human");
+
+    int gamemode = 0;
+
+    while (gamemode < 1 || gamemode > 3) {
+      System.out.print("Enter your selection: ");
+        
+      if (scanner.hasNextLine()) {
+        String input = scanner.nextLine().trim();
+
+        try {
+          gamemode = Integer.parseInt(input);
+          if (gamemode < 1 || gamemode > 3) {
+            System.out.println("Invalid number. Please enter 1, 2, or 3.");
+          }
+        } 
+
+        catch (NumberFormatException e){
+          System.out.println("Invalid input. Please enter a number.");
+        }
+      }
+    }
+
     char lastWinner = 'X';
     char lastLoser = 'O';
 
