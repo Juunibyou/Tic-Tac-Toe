@@ -14,6 +14,18 @@ public class App {
     while(playagain){
       System.out.println("\n|_____Welcome to Tic-Tac-Toe Game!_____|\n");
 
+      System.out.println("Select Game Mode:");
+      System.out.println("1. Human vs Human");
+      System.out.println("2. Human vs Computer");
+      int gamemode = -1;
+
+      while(gamemode != 1 && gamemode != 2){
+        try{
+          System.out.println("Selection: ");
+          gamemode = Integer.parseInt(scanner.nextLine().trim());
+        }
+      }
+
       char[][] board = {
         {'1','2','3'},
         {'4','5','6'}, 
