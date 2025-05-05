@@ -69,7 +69,7 @@ public class ComputerPlayer{
                 board[row][col] = check;
 
                 if(gameover.CheckWinner(board, check)){
-                    board[row][col] = check;
+                    board[row][col] = place;
                     return true;
                 }
 
