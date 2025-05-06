@@ -1,4 +1,5 @@
 package org.example;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class App {
@@ -21,6 +22,7 @@ public class App {
 
       while(gamemode != 1 && gamemode != 2){
         try{
+          System.out.println("Please choose between (1-2)");
           System.out.println("Selection: ");
           gamemode = Integer.parseInt(scanner.nextLine().trim());
         }
