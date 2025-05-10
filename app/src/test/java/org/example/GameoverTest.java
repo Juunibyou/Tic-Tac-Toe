@@ -1,11 +1,11 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class AppTest {
-  
-  @Test
+import org.junit.jupiter.api.Test;
+
+public class GameoverTest {
+     @Test
     public void testplayerXwinhorizontal(){
       char[][] board = {
         {'X', 'X', 'X'},
@@ -52,31 +52,4 @@ class AppTest {
     Gameover gameover = new Gameover();
     assertTrue(gameover.isGameFinished(board, 'O'));
     }
-
-    @Test
-    public void testPosition() {
-    char[][] board = {
-        {'X', 'O', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    Space space = new Space();
-    boolean isAvailable = space.isAvailable(board, "1"); 
-    assertFalse(isAvailable);
-    }
-
-    @Test
-    public void testValid() {
-    char[][] board = {
-        {'1', '2', '3'},
-        {'4', '5', '6'},
-        {'7', '8', '9'}
-    };
-
-    Space space = new Space();
-    boolean isAvailable = space.isAvailable(board, "-1"); 
-    assertFalse(isAvailable);
-    }
 }
-
